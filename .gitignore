@@ -5,37 +5,113 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.venv/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
 venv/
 env/
+ENV/
 
 # =========================
 # OS files
 # =========================
 Thumbs.db
 .DS_Store
+*.swp
+*.swo
+*~
 
 # =========================
-# Dataset (DO NOT PUSH)
+# Videos (Large files - DO NOT PUSH)
 # =========================
-dataset/
+vedios/
 videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
 
 # =========================
-# YOLO / Training outputs
+# Dataset & Annotations
 # =========================
-runs/
+# Keep structure but ignore large data
+dataset/images/
+dataset/labels/
+data/frames/
+data/annotation/images/
+data/annotation/labels/
+
+# Keep these config files
+!dataset/data.yaml
+!dataset/*.yaml
+
+# =========================
+# Models (Large files - DO NOT PUSH)
+# =========================
+models/*.pt
+models/*.onnx
+models/*.engine
+models/*.weights
 *.pt
 *.onnx
 *.engine
+*.weights
+
+# But keep the download script
+!models/.gitkeep
 
 # =========================
-# Logs & caches
+# Training outputs
 # =========================
-*.log
+runs/
+output/
 *.cache
 
 # =========================
-# VS Code
+# Logs
 # =========================
-.vscode/
+*.log
+logs/
+wandb/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+.ipynb_checkpoints/
+
+# =========================
+# IDE
+# =========================
+.idea/
+*.sublime-*
+
+# =========================
+# Jupyter Notebooks (optional)
+# =========================
+*.ipynb_checkpoints
+
+# =========================
+# System files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Keep these important files
+# =========================
+!.gitignore
+!README.md
+!requirements.txt
+!config.py
+!train.py
+!detect.py
+!validate.py
+!ROADMAP.md
+config.bat
+node_modules
